@@ -1,47 +1,13 @@
-extends includes/base
+<!DOCTYPE html><html class="index" lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>Hexo</title>
+<link rel="stylesheet" href="/css/main.css">
 
-block content
-    div.al_index_background.dis_flex_center.al_full_cover
-        - var bio = config.bio || 'A Beautiful Text Site.'
-        - var firstBioChar = bio.substr(0, 1)
-        div.al_pos_ab.al_letter.al_index_background_letter= firstBioChar
-        h2.al_index_background_bio= bio
-    div.al_index_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container
-            div.al_section_container.dis_flex_jcenter
-                div.section_header= 'LATEST PAGES'
-            ur.al_post_list
-                each item in site.posts.sort('date', -1).toArray()
-                    - var postTitle = item.title || 'No Title'
-                    - var createDate = date(item.date, 'MMM DD')
-                    - var firstChar = postTitle.substr(0, 1)
-                    - var postURL = item.link || item.path
-                    - var excerpt = item.excerpt + '...' || 'No Excerpt'
-                    - var readLaterURL = 'https://getpocket.com/edit?url=' + encodeURIComponent(config.url + '/' + url_for(postURL))
-                    li.al_index_pageList_item.al_index_page_seperator
-                        div.al_index_post_title_cnt.dis_flex
-                            div.al_pos_ab.al_letter.al_index_post_title_letter= firstChar
-                            h2.al_index_post_title
-                                a(href=url_for(postURL))= postTitle
-                            div.al_index_post_extra.dis_flex
-                                div.al_index_post_date.al_index_post_extra_item= createDate
-                                div.al_index_post_read_time
-                                    |#{min2read(item.content)} Min Read
-                        div.al_index_post_excerpt_cnt
-                            p.al_index_post_excerpt= excerpt
-                        div.al_index_post_button_cnt.dis_flex
-                            a.al_button.al_button_red.al_index_post_button(href=url_for(postURL))= 'READ ON'
-                            a.al_button.al_button_white.al_index_post_button(href=readLaterURL)= 'READ LATER'
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
 
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(page.prev_link))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(page.next_link))
-                            | Older Posts
-                            span.arrow →
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head><body><div class="hide" id="particles-oli-wrapper"></div><div class="index-wrapper"><header class="head index hide"><h1 class="head-title u-fl">Hexo</h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li></ul></nav></header></div>
+<script src="/js/particles.min.js"></script>
+
+<script src="/js/particles.oli.js"></script>
+</body></html>
